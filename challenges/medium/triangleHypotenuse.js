@@ -6,8 +6,9 @@
  * @returns {number} the hypotenuse
 */
 
-function triangleHypotenuse (a, b) {
-  return sqrt(a^2 + b^2)
+function triangleHypotenuse(a, b) {
+  // a^2 + b^2 = c^2
+  return Math.sqrt(a * a + b * b) //2.6457513110645907
 }
 
 module.exports = triangleHypotenuse

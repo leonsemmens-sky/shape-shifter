@@ -7,19 +7,19 @@ const trapeziumArea = require('../challenges/easy/trapeziumArea')
 
 describe('Easy', () => {
 
-  test('area of 2 by 5 rectanlgle should be 10', () => {
-    expect(rectangleArea(2,5)).toBe(10)
+  test('area of 2 by 5 rectangle should be 10', () => {
+    expect(rectangleArea(2, 5)).toBe(10)
   })
 
   test('perimeter of 3 by 7 rectangle should be 20', () => {
-    expect(rectanglePerimeter(3,7)).toBe(20)
+    expect(rectanglePerimeter(3, 7)).toBe(20)
   })
 
-  test('100 by 100 rectangle should be square', () => {
+  test('2 by 2 rectangle should be square', () => {
     expect(isSquare(2, 2)).toBeTruthy()
   })
 
-  test('100 by 101 rectangle should not be square', () => {
+  test('2 by 3 rectangle should not be square', () => {
     expect(isSquare(2, 3)).toBeFalsy()
   })
 

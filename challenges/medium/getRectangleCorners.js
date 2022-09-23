@@ -5,10 +5,42 @@
  * @param {Object} point - the bottom left point
  * @param {number} point.x - the x coordinate
  * @param {number} point.y - the y coordinate
- * @returns {Object[]} the corners
+ * @returns {Object[]} the corners   
 */
 
-function getRectangleCorners (a, b, point) {
+/*
+Medium › corners of 2 by 3 rectangle starting at (0,0) should be (0,0), (2,0), (2,3), (0,3)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 4
+    + Received  + 4
+
+    @@ -2,17 +2,17 @@
+        Object {
+          "x": 0,
+          "y": 0,
+        },
+        Object {
+    -     "x": 2,
+    -     "y": 0,
+    +     "x": 0,
+    +     "y": 3,
+        },
+        Object {
+          "x": 2,
+          "y": 3,
+        },
+        Object {
+    -     "x": 0,
+    -     "y": 3,
+    +     "x": 2,
+    +     "y": 0,
+        },
+      ]
+*/
+
+function getRectangleCorners(a, b, point) {
   // get the bottom right point
   const point1 = {
     x: point.x + a,
@@ -16,16 +48,17 @@ function getRectangleCorners (a, b, point) {
   }
   // then the top right
   const point2 = {
-    x: point1.x + a,
-    y: point1.y + b
+    x: point.x + a,
+    y: point.y + b
   }
   // then the top left
   const point3 = {
-    x: point1.x,
-    y: point2.y - b
+    x: point.x,
+    y: point.y + b
   }
   // and return them as an array of points
-  return [point3, point2, point1, point]
+  // need { x: 0, y: 0 }, { x: 2, y: 0 }, { x: 2, y: 3 }, { x: 0, y: 3 }
+  return [point, point1, point2, point3]
 }
 
 module.exports = getRectangleCorners

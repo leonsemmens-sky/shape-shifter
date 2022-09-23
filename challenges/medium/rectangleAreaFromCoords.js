@@ -6,9 +6,16 @@
  * @return {number} the area
 */
 
-function rectangleAreaFromCoords (points) {
-  [A,B,C,D] = points
-  return (A.x - B.x)*(C.y - D.y)
+function rectangleAreaFromCoords(points) {
+  let [A, B, C, D] = points
+  let oppositePoint;
+  for (let point of points) {
+    if (point.x !== A.x && point.y !== A.y) {
+      oppositePoint = point;
+      break;
+    }
+  }
+  return Math.abs(A.x - oppositePoint.x) * Math.abs(A.y - oppositePoint.y)
 }
 
 module.exports = rectangleAreaFromCoords
