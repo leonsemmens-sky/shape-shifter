@@ -8,38 +8,6 @@
  * @returns {Object[]} the corners   
 */
 
-/*
-Medium › corners of 2 by 3 rectangle starting at (0,0) should be (0,0), (2,0), (2,3), (0,3)
-
-    expect(received).toEqual(expected) // deep equality
-
-    - Expected  - 4
-    + Received  + 4
-
-    @@ -2,17 +2,17 @@
-        Object {
-          "x": 0,
-          "y": 0,
-        },
-        Object {
-    -     "x": 2,
-    -     "y": 0,
-    +     "x": 0,
-    +     "y": 3,
-        },
-        Object {
-          "x": 2,
-          "y": 3,
-        },
-        Object {
-    -     "x": 0,
-    -     "y": 3,
-    +     "x": 2,
-    +     "y": 0,
-        },
-      ]
-*/
-
 function getRectangleCorners(a, b, point) {
   // get the bottom right point
   const point1 = {
