@@ -9,10 +9,9 @@ const trianglePerimeter = require('../easy/trianglePerimeter')
  * @returns {number} the area
 */
 
-function triangleAreaFromSides (a, b, c) {
+function triangleAreaFromSides(a, b, c) {
   const s = trianglePerimeter(a, b, c) / 2
-  // I'm going to lunch, I'll do the rest later... probably
-  return
+  return Math.sqrt(s * (s - a) * (s - b) * (s - c))
 }
 
 module.exports = triangleAreaFromSides
