@@ -9,14 +9,40 @@
  * 
  */
 
+function getRectangleMinMaxPoints(rectangle) {
+  let minPoint = rectangle[0];
+  for (let point of rectangle) {
+    if (point.x < minPoint.x || point.y < minPoint.y) {
+      minPoint = point
+    }
+  }
+
+  let maxPoint;
+  for (let point of rectangle) {
+    if (point.x !== minPoint.x && point.y !== minPoint.y) {
+      maxPoint = point;
+      break;
+    }
+  }
+
+  return [minPoint, maxPoint]
+}
+
 /**
  * Given the four corners of two rectangles, find the area of their overlap.
  * If they don't overlap, return 0.
  * @param {{x: number, y: number}[]} rectangle1 - The four corners of rectangle 1
  * @param {{x: number, y: number}[]} rectangle2 - The four corners of rectangle 2
  */
-function rectangleOverlap (rectangle1, rectangle2) {
-  // idk tbh :/
+function rectangleOverlap(rectangle1, rectangle2) {
+  let [A, B] = getRectangleMinMaxPoints(rectangle1);
+  let [C, D] = getRectangleMinMaxPoints(rectangle2);
+
+  let width = Math.min(B.x, D.x) - Math.max(A.x, C.x)
+  let height = Math.min(B.y, D.y) - Math.max(A.y, C.y)
+
+  if (width <= 0 || height <= 0) return 0;
+  return width * height
 }
 
 module.exports = rectangleOverlap
